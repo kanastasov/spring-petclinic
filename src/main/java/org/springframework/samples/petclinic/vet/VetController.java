@@ -45,7 +45,7 @@ class VetController {
 	public String showVetList(@RequestParam(defaultValue = "1") int page, Model model) {
 		// Here we are returning an object of type 'Vets' rather than a collection of Vet
 		// objects so it is simpler for Object-Xml mapping
-		Page<Vet> paginated = findPaginated(page);
+		Page<Vet> paginated = findPaginated(page); 
 		return addPaginationModel(page, paginated, model);
 	}
 
