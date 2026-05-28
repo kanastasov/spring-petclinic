@@ -87,8 +87,13 @@ class OwnerController {
 	}
 
 	@GetMapping("/owners/find")
-	public String initFindForm() {
-		return "owners/findOwners";
+	public String initFindForm(Model model) {
+
+	    model.addAttribute("owner", new Owner()); // for search form
+
+	    model.addAttribute("owners", owners.findAll());
+
+	    return "owners/findOwners";
 	}
 
 	@GetMapping("/owners")

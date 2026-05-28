@@ -28,6 +28,27 @@
 
     <a class="btn btn-primary" th:href="@{/owners/new}" th:text="#{addOwner}">Add Owner</a>
 
+<h3>All Owners</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Telephone</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr th:each="owner : ${owners}">
+      <td th:text="${owner.firstName + ' ' + owner.lastName}"></td>
+      <td th:text="${owner.address}"></td>
+      <td th:text="${owner.city}"></td>
+      <td th:text="${owner.telephone}"></td>
+    </tr>
+  </tbody>
+</table>
   </form>
 
 </body>
